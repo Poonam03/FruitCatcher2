@@ -104,16 +104,27 @@ class Game{
                      
                  }
                  
+                 
+                                        
                   if (player.index !== null) {
                      //fill code here, to destroy the objects. (Use the one in the class project 39)
                      // add the condition to calculate the score. and use update ti update the values in the database.
-                     
-                        if (fruitGroup.get(i).isTouching(players)) {
+                     for (var i = 0; i < fruitGroup.length; i++) {
+                        if (fruitGroup.get(i).isTouching(player1) && player.index===1) {
                             fruitGroup.get(i).destroy();
-                            player.score =player.score+1;
+                            allPlayers.player1.score=player.score++;
                             player.update();
                             
                         }
+                        if (fruitGroup.get(i).isTouching(player2) && player.index===2) {
+                            fruitGroup.get(i).destroy();
+                            allPlayers.player2.score=player.score++;
+                            player.update();
+                            
+                        }
+                    }
+                   
+
                         
                     
                   }
